@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuances D&eacute;cors &mdash; Peinture, R&eacute;novation &amp; Rev&ecirc;tements | Apprieu (38)</title>
+<meta name="description" content="Nuances D&eacute;cors, entreprise de peinture &agrave; Apprieu en Is&egrave;re. Peinture int&eacute;rieure et ext&eacute;rieure, rev&ecirc;tements de sol, enduits d&eacute;coratifs, fa&ccedil;ade, pl&acirc;trerie et isolation. Devis gratuit.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--yellow:#d5b800;--yellow-dark:#b39a00;--yellow-light:#faf6e0;--charcoal:#2d2a27;--charcoal-light:#3d3935;--gray:#666;--gray-light:#f5f3f0;--white:#fff}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--charcoal);line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(45,42,39,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.15)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-logo img{height:50px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);transition:color .2s;text-transform:uppercase;letter-spacing:0.5px}
+.nav-links a:hover{color:var(--yellow)}
+.nav-cta{background:var(--yellow);color:var(--charcoal)!important;padding:10px 22px;border-radius:4px;font-weight:700;transition:background .2s}
+.nav-cta:hover{background:var(--yellow-dark)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.burger span{width:24px;height:2px;background:var(--white);transition:all .3s}
+
+.hero{margin-top:70px;position:relative;height:75vh;min-height:500px;overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background:url('img/facade.jpg') center/cover;filter:brightness(0.35)}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px;color:var(--white)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(213,184,0,0.9);color:var(--charcoal);padding:8px 18px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.1;margin-bottom:16px;max-width:700px}
+.hero p{font-size:clamp(16px,2vw,20px);max-width:550px;opacity:0.9;margin-bottom:32px;line-height:1.5}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 32px;border-radius:4px;font-weight:600;font-size:15px;transition:all .2s;cursor:pointer;border:none}
+.btn-yellow{background:var(--yellow);color:var(--charcoal)}
+.btn-yellow:hover{background:var(--yellow-dark);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.5)}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,0.1)}
+
+.section{padding:80px 24px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-title{font-size:clamp(26px,3vw,38px);font-weight:700;margin-bottom:12px}
+.section-sub{font-size:17px;color:var(--gray);max-width:600px;margin-bottom:48px}
+.section-label{font-size:13px;font-weight:700;color:var(--yellow-dark);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.bg-light{background:var(--gray-light)}
+.bg-yellow{background:var(--yellow-light)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.12)}
+.about-img img{width:100%;height:400px;object-fit:cover;display:block}
+.about-text h3{font-size:24px;margin-bottom:16px}
+.about-text p{color:var(--gray);margin-bottom:16px;font-size:15px}
+.about-highlights{display:flex;gap:32px;margin-top:24px}
+.highlight{text-align:center}
+.highlight .num{font-size:36px;font-weight:700;color:var(--yellow-dark);line-height:1}
+.highlight .label{font-size:13px;color:var(--gray);margin-top:4px}
+
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:all .3s;border-bottom:3px solid transparent}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.1);border-bottom-color:var(--yellow)}
+.service-card img{width:100%;height:200px;object-fit:cover}
+.service-card-body{padding:24px}
+.service-card h3{font-size:18px;margin-bottom:8px;font-weight:600}
+.service-card p{font-size:14px;color:var(--gray);line-height:1.6}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;position:relative}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery-item:hover img{transform:scale(1.05)}
+
+.cta-section{background:var(--charcoal);color:var(--white);text-align:center;padding:80px 24px}
+.cta-section h2{font-size:clamp(26px,3vw,38px);margin-bottom:16px}
+.cta-section p{font-size:17px;opacity:0.8;max-width:600px;margin:0 auto 32px}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-icon{width:44px;height:44px;background:var(--yellow-light);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-item h4{font-size:15px;font-weight:600;margin-bottom:2px}
+.contact-item p{font-size:14px;color:var(--gray)}
+.contact-map{border-radius:8px;overflow:hidden;min-height:350px}
+.contact-map iframe{width:100%;height:100%;border:0;min-height:350px}
+
+.footer{background:var(--charcoal);color:rgba(255,255,255,0.6);padding:32px 24px;text-align:center;font-size:13px}
+.footer a{color:var(--yellow)}
+
+@media(max-width:768px){
+.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--charcoal);flex-direction:column;padding:24px;gap:16px;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+.nav-links.open{display:flex}
+.burger{display:flex}
+.hero{height:60vh;min-height:400px}
+.about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
+.services-grid{grid-template-columns:1fr}
+.gallery-grid{grid-template-columns:1fr 1fr}
+.hero-btns{flex-direction:column}
+.btn{text-align:center}
+.about-highlights{gap:20px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-inner">
+<a href="#" class="nav-logo"><img src="img/logo.jpg" alt="Nuances D&eacute;cors"></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#about">L'entreprise</a></li>
+<li><a href="#services">Nos m&eacute;tiers</a></li>
+<li><a href="#realisations">R&eacute;alisations</a></li>
+<li><a href="#contact" class="nav-cta">Devis gratuit</a></li>
+</ul>
+<div class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+<span></span><span></span><span></span>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="hero-badge">&#9733; Depuis 2016 en Is&egrave;re</div>
+<h1>Peinture, d&eacute;coration &amp; rev&ecirc;tements &agrave; Apprieu</h1>
+<p>Nuances D&eacute;cors, votre &eacute;quipe de professionnels pour tous vos travaux de peinture, rev&ecirc;tements de sol, enduits d&eacute;coratifs et fa&ccedil;ade en Is&egrave;re.</p>
+<div class="hero-btns">
+<a href="tel:0609415573" class="btn btn-yellow">06 09 41 55 73</a>
+<a href="#realisations" class="btn btn-outline">Nos r&eacute;alisations</a>
+</div>
+</div>
+</section>
+
+<section class="section bg-yellow" id="about">
+<div class="section-inner">
+<div class="about-grid">
+<div class="about-img">
+<img src="img/platrerie.jpg" alt="Chantier Nuances D&eacute;cors &mdash; pl&acirc;trerie et isolation">
+</div>
+<div class="about-text">
+<p class="section-label">L'entreprise</p>
+<h3>Votre &eacute;quipe de professionnels en Is&egrave;re</h3>
+<p>Cr&eacute;&eacute;e en 2016 par Salvatore Inglese, la SARL Nuances D&eacute;cors est une entreprise de peinture et de d&eacute;coration implant&eacute;e &agrave; Apprieu, au c&oelig;ur du Pays Voironnais.</p>
+<p>Notre &eacute;quipe de 5 professionnels intervient chez les particuliers et les professionnels pour des travaux de peinture, d'enduits d&eacute;coratifs, de rev&ecirc;tements de sol et de fa&ccedil;ade. Un savoir-faire complet, du conseil &agrave; la finition.</p>
+<div class="about-highlights">
+<div class="highlight"><div class="num">2016</div><div class="label">Cr&eacute;ation</div></div>
+<div class="highlight"><div class="num">5</div><div class="label">Professionnels</div></div>
+<div class="highlight"><div class="num">38</div><div class="label">Is&egrave;re</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="services">
+<div class="section-inner">
+<p class="section-label">Nos m&eacute;tiers</p>
+<h2 class="section-title">Des comp&eacute;tences compl&egrave;tes</h2>
+<p class="section-sub">De la peinture int&eacute;rieure aux rev&ecirc;tements de sol, nous intervenons sur tous vos projets de finition et de d&eacute;coration.</p>
+<div class="services-grid">
+<div class="service-card">
+<img src="img/peinture1.jpg" alt="Peinture int&eacute;rieure et ext&eacute;rieure" loading="lazy">
+<div class="service-card-body">
+<h3>Peinture int&eacute;rieure &amp; ext&eacute;rieure</h3>
+<p>Murs, plafonds, boiseries, fa&ccedil;ades. Pr&eacute;paration des supports, mise en peinture et finitions soign&eacute;es pour un r&eacute;sultat durable.</p>
+</div>
+</div>
+<div class="service-card">
+<img src="img/decoration.jpg" alt="Enduits d&eacute;coratifs et produits de finition" loading="lazy">
+<div class="service-card-body">
+<h3>Enduits d&eacute;coratifs</h3>
+<p>Enduits, stuc, effets mati&egrave;re. Des techniques de finition haut de gamme pour donner du caract&egrave;re &agrave; vos int&eacute;rieurs.</p>
+</div>
+</div>
+<div class="service-card">
+<img src="img/revetements.jpg" alt="Rev&ecirc;tements de sol" loading="lazy">
+<div class="service-card-body">
+<h3>Rev&ecirc;tements de sol</h3>
+<p>Moquette, PVC, carrelage, parquet. Fourniture et pose de tous types de rev&ecirc;tements de sol pour habitat et locaux professionnels.</p>
+</div>
+</div>
+<div class="service-card">
+<img src="img/facade.jpg" alt="Ravalement de fa&ccedil;ade" loading="lazy">
+<div class="service-card-body">
+<h3>Fa&ccedil;ade</h3>
+<p>Ravalement, nettoyage, enduit de fa&ccedil;ade. Redonner un coup de neuf &agrave; l'ext&eacute;rieur de votre maison ou de vos locaux.</p>
+</div>
+</div>
+<div class="service-card">
+<img src="img/platrerie.jpg" alt="Pl&acirc;trerie et isolation" loading="lazy">
+<div class="service-card-body">
+<h3>Pl&acirc;trerie &amp; isolation</h3>
+<p>Cloisons, doublages, faux plafonds, isolation thermique et phonique. Des solutions adapt&eacute;es &agrave; votre habitat.</p>
+</div>
+</div>
+<div class="service-card">
+<img src="img/peinture2.jpg" alt="D&eacute;coration et conseil" loading="lazy">
+<div class="service-card-body">
+<h3>D&eacute;coration &amp; conseil</h3>
+<p>Conseil en couleurs, harmonie des mati&egrave;res et choix des finitions. Nous vous accompagnons dans la d&eacute;finition de votre projet.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-light" id="realisations">
+<div class="section-inner">
+<p class="section-label">R&eacute;alisations</p>
+<h2 class="section-title">Nos chantiers r&eacute;cents</h2>
+<p class="section-sub">Quelques exemples de nos interventions en peinture, rev&ecirc;tements et fa&ccedil;ade en Is&egrave;re.</p>
+<div class="gallery-grid">
+<div class="gallery-item"><img src="img/facade.jpg" alt="Ravalement de fa&ccedil;ade" loading="lazy"></div>
+<div class="gallery-item"><img src="img/platrerie.jpg" alt="Pl&acirc;trerie et isolation" loading="lazy"></div>
+<div class="gallery-item"><img src="img/revetements.jpg" alt="Rev&ecirc;tements de sol" loading="lazy"></div>
+<div class="gallery-item"><img src="img/peinture1.jpg" alt="Peinture int&eacute;rieure" loading="lazy"></div>
+<div class="gallery-item"><img src="img/decoration.jpg" alt="Enduits d&eacute;coratifs" loading="lazy"></div>
+<div class="gallery-item"><img src="img/peinture2.jpg" alt="Finitions peinture" loading="lazy"></div>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>Un projet de peinture ou de r&eacute;novation ?</h2>
+<p>Contactez-nous pour un devis gratuit. Nous intervenons dans tout le Pays Voironnais et ses environs&nbsp;: Apprieu, Rives, Voiron, Tullins, Moirans&hellip;</p>
+<a href="tel:0609415573" class="btn btn-yellow">Appelez le 06 09 41 55 73</a>
+</section>
+
+<section class="section" id="contact">
+<div class="section-inner">
+<p class="section-label">Contact</p>
+<h2 class="section-title">Nous trouver</h2>
+<p class="section-sub">Basés à Apprieu en Is&egrave;re, nous intervenons dans un rayon de 30&nbsp;km autour de Voiron.</p>
+<div class="contact-grid">
+<div class="contact-info">
+<div class="contact-item">
+<div class="contact-icon">&#128205;</div>
+<div><h4>Adresse</h4><p>335 route de Charavines<br>38140 Apprieu</p></div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">&#128222;</div>
+<div><h4>T&eacute;l&eacute;phone</h4><p><a href="tel:0609415573">06 09 41 55 73</a></p></div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">&#9993;</div>
+<div><h4>Email</h4><p><a href="mailto:salvatore@nuances-decors.fr">salvatore@nuances-decors.fr</a></p></div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">&#128337;</div>
+<div><h4>Horaires</h4><p>Lundi &mdash; Vendredi : 7h30 &mdash; 18h</p></div>
+</div>
+</div>
+<div class="contact-map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11280.5!2d5.505!3d45.395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af54a5b1b9c2f%3A0x408ab2ae4bb0f60!2s38140%20Apprieu!5e0!3m2!1sfr!2sfr!4v1" allowfullscreen loading="lazy" title="Nuances D&eacute;cors &mdash; Apprieu (38)"></iframe>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<p>&copy; 2025 Nuances D&eacute;cors &mdash; SARL au capital social &mdash; SIREN 820664639 &mdash; 335 route de Charavines, 38140 Apprieu</p>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth'});document.getElementById('navLinks').classList.remove('open')}})});
+</script>
+</body>
+</html>
